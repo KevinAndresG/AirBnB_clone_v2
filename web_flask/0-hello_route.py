@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+    starts a Flask web application
+    and display a string
+"""
 from flask import Flask
 if __name__ == "__main__":
     app = Flask(__name__)
