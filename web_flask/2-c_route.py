@@ -3,8 +3,7 @@
     starts a Flask web application
     and display a string
 """
-from dataclasses import replace
-from flask import Flask
+from flask import Flask, escape
 app = Flask(__name__)
 
 
@@ -20,7 +19,7 @@ def hbnb():
 
 @app.route("/c/<text>", strict_slashes=False)
 def text(text):
-    return "C %s" % text.replace('_', ' ')
+    return "C %s" % escape(text.replace('_', ' '))
 
 
 if __name__ == "__main__":
