@@ -28,7 +28,6 @@ def c(text):
 def python(text):
     if text:
         return "Python %s" % escape(text.replace('_', ' '))
-    return text
 
 
 if __name__ == "__main__":
