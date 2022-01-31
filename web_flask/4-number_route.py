@@ -1,10 +1,8 @@
 #!/usr/bin/python3
 """
     starts a Flask web application
-    and display a string
+    and display numbers
 """
-from operator import length_hint
-from typing import Type
 from flask import Flask, escape
 app = Flask(__name__)
 
@@ -31,7 +29,7 @@ def python(text="is cool"):
 
 @app.route("/number/<int:n>", strict_slashes=False)
 def integer(n):
-    return f"{n} is a number"
+    return "%d is a number" % n
 
 
 if __name__ == "__main__":
