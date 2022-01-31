@@ -23,11 +23,13 @@ def c(text):
     return "C %s" % escape(text.replace('_', ' '))
 
 
-@app.route("/python/<string:text>", defaults={'text': 'is cool'}, strict_slashes=False)
+@app.route("/python", defaults={'text': 'is cool'}, strict_slashes=False)
+@app.route("/python/<string:text>", strict_slashes=False)
 def python(text):
     if text:
         return "Python %s" % escape(text.replace('_', ' '))
     return text
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
