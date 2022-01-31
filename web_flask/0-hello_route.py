@@ -6,10 +6,8 @@
 from flask import Flask
 if __name__ == "__main__":
     app = Flask(__name__)
-    app.url_map.strict_slashes = False
+    app.run(host="0.0.0.0", port=5000)
 
-    @app.route("/")
+    @app.route("/", strict_slashes=False)
     def hello():
         return "Hello HBNB!"
-
-app.run(host="0.0.0.0", port=5000)
